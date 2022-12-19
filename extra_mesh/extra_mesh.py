@@ -84,8 +84,8 @@ def visualize_polyscope(vertices, triangles):
 
 def extra_mesh(args):
     ## preparing for loading data
-    embed_fn, input_ch = get_embedder(10, 0)
-    embeddirs_fn, input_ch_views = get_embedder(4, 0)
+    embed_fn, input_ch = get_embedder(10)
+    embeddirs_fn, input_ch_views = get_embedder(4)
     model = NeRF(D=8, W=256,input_ch=input_ch, output_ch=4, skips=[4], input_ch_views=input_ch_views, use_viewdirs=True)
     ckpt = torch.load(args.model)
     model.load_state_dict(ckpt['network_fn_state_dict'])

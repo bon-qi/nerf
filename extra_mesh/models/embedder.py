@@ -38,7 +38,7 @@ class Embedder(object):
     def embed(self, inputs):
         return torch.cat([fn(inputs) for fn in self.embed_fns], -1)
 
-def get_embedder(multires=10, i=0):
+def get_embedder(multires=10):
     if i == -1:
         return nn.Identity(), 3
     
