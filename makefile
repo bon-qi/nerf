@@ -7,7 +7,7 @@ CUDA_VERSION=116
 ## set up environments
 create_env:
 	conda create -n nerf -y python=3.8
-	conda activate nerf
+	# conda activate nerf
 setup_env: create_env
 	pip install torch==${TORCH_VERSION}+cu${CUDA_VERSION} --extra-index-url https://download.pytorch.org/whl/cu${CUDA_VERSION}
 	pip install configargparse numpy imageio opencv_python tqdm
