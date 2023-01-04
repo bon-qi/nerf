@@ -32,3 +32,7 @@ Please see [makefile](./makefile) for more information.
 Please refer to [preprocess_data](./preprocess_data/) for more information to a customized dataset.
 
 ## Reference
+- [NeRF](https://www.matthewtancik.com/nerf) : original project page
+
+## Helpful resources
+- [D-NeRF](https://github.com/albertpumarola/D-NeRF): D-NeRF is based on the same project as this one.
