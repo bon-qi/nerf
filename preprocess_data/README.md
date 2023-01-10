@@ -34,7 +34,7 @@ sudo apt-get install libcgal-qt5-dev
 ```
 
 
-To install on Windows, please download the `.exe` installer from the [official website](https://colmap.github.io/install.html).
+To install on Windows, please download the `.exe` installer from the [official website](https://colmap.github.io/install.html) and set it into your `PATH`.
 
 The, install `ffmpeg` for your computer with
 ```
@@ -45,15 +45,20 @@ For windows, please search `ffmpeg windows` for your computer and add it into yo
 
 ### How to preprocess
 1. Place your images/videos into `ANY_PLACE/[IMAGE_FOLDER]/` or `ANY_PLACE/[VIDEO_NAME]` 
-2. For preprocess images, use `python colmap2nerf.py --images ANY_PLACE/[IMAGE_FOLDER] --run_colmap`, this will produce a `transform.json` file for extrinsic parameters and intrinsic parameters of camera.
+2. For preprocess images, use 
+ ```
+ python colmap2nerf.py --images ANY_PLACE/[IMAGE_FOLDER] --run_colmap
+ ```
+ this will produce a `transform.json` file for extrinsic parameters and intrinsic parameters of cameras.
+
 3. For preprocess video, use `python colmap2nerf.py --video_in ANY_PLACE/[VIDEO_NAME] --run_colmap`, this will produce a `transform.json` in this folder for extrinsic parameters and intrinsic parameters of camera, and produce a `ANY_PLACE/images/` folder for relative images.
 
 Note that if any issue happened, it might be 
 1. Your libraries are not fully installed (e.g. `freeimage` for `.png` only but you got `.jpg`, `qt` of `opencv_python` need reinstalled).
-2. Your images are not sufficient engougth for a good estimation.
-3. Your cpu memory is not enough for parallel computing of `colmap` (maybe your image is too huge, suggestion: use [resize.py](./resize.py) for smaller image, but this might cause less features).
+2. Your images are not sufficient engougth for a good estimation(seriously possible).
+3. Your cpu memory is not enough for parallel computing of `colmap` (maybe your image is too huge, suggestion: use [resize.py](./resize.py) for smaller image (but this might cause less features), see code for details.
 
-And also be patient that `colmap` might be slow and noisy, but this is the only way...
+And also be patient that `colmap` might be slow and noisy(~5mins), but this is the only way...
 
 
 ### How to use the preprocessed data?
@@ -67,6 +72,9 @@ You can place the `./[IMAGES]/` data with `./transform.json` together as
     └── transform.json
 ```
 When using nerf, set its type as `custom`.
+
+### Warning:
+Currently the type of `custom` is not avaliable for `train.py`, maybe a little of hacking is good.
 
 ### Special Thanks
 This is mainly refered to [instant-ngp](https://github.com/NVlabs/instant-ngp)'s data preprocessing.

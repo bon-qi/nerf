@@ -15,10 +15,12 @@ Please type `python extra_mesh.py -h` for descriptions of command line.
 
 Gennerally, you need to coustomize these parameters
 ```
---model ../pretrained/lego_18000.tar
---save_path ./lego.ply
---bound_min [-2,-2,-2]
---bound_max [2,2,2]
+python extra_mesh.py \
+--model ../pretrained/lego_18000.tar \
+--save_path ./lego.ply \
+--bound_min [-2,-2,-2] \
+--bound_max [2,2,2] \
+--visualize polyscope
 ```
 The suggested parameters of provided pretrained models were provided in  [suggestions](#suggestions) 
 
@@ -26,7 +28,8 @@ And you can select your visualization tool either [Polyscope](https://polyscope.
 
 
 ### Jupyter notebook
-Install jupyter notebook (`pip install jupyter`) and type (`jupyter notebook`), find the [tutorial](./extra_mesh.ipynb) in your web browser. For details, please follow the jupyter notebook [tutorial](./extra_mesh.ipynb).
+Install jupyter notebook (`pip install jupyter`) and type (`jupyter notebook`), find the [tutorial](./extra_mesh.ipynb) in your web browser (or directly open it with vscode). For details, please follow the jupyter notebook [tutorial](./extra_mesh.ipynb).
+(`polyscope` is not well-integrated with `jupyter-notebook`, will cause bug unexpectedly.)
 
 ### Suggestions:
 Generally, we provide pretrained model, and they were tested to be lied at bounds below

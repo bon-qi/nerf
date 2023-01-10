@@ -7,9 +7,9 @@ import configargparse
 import polyscope as ps
 import plotly.graph_objects as go
 
-from models.nerf import NeRF
-from models.embedder import get_embedder
-from models.utils import batchify
+from model.nerf import NeRF
+from model.embedder import get_embedder
+from model.utils import batchify
 
 
 if torch.cuda.is_available(): 

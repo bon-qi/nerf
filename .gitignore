@@ -1,5 +1,7 @@
 */__pycache__/*
 *.tar
+*.zip
 *.__pyc
 data/*
 *.ply
+*/__MACOSX/*

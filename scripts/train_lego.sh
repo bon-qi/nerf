@@ -1,3 +1,4 @@
+#! /bin/bash
 python train.py --config ./configs/lego.txt
 
 ## Trainning for else

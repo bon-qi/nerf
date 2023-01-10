@@ -4,7 +4,7 @@ A Customized NeRF pipeline by Qi
 ## Install
 To install the environment, you just need to type (assume `anaconda` or `miniconda` installed),
 ```
-make setup_env_conda
+make setup_env
 ```
 Or using scripts, after using `conda` (`conda create -n nerf -y python=3.8`, `conda activate nerf`) or it will on your default `python` environment.
 ```
