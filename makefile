@@ -7,7 +7,7 @@ CUDA_VERSION=116
 ## set up environments
 create_env:
 	conda create -n nerf -y python=3.8
-	# conda activate nerf
+	conda activate nerf
 setup_env: create_env
 	pip install torch==${TORCH_VERSION}+cu${CUDA_VERSION} --extra-index-url https://download.pytorch.org/whl/cu${CUDA_VERSION}
 	pip install configargparse numpy imageio opencv_python tqdm
@@ -15,11 +15,12 @@ setup_env: create_env
 ## download datasets
 download_data:
 	mkdir -p data
-	wget http://cseweb.ucsd.edu/~viscomp/projects/LF/papers/ECCV20/nerf/tiny_nerf_data.npz ./data
+	wget http://cseweb.ucsd.edu/~viscomp/projects/LF/papers/ECCV20/nerf/tiny_nerf_data.npz
 	wget http://cseweb.ucsd.edu/~viscomp/projects/LF/papers/ECCV20/nerf/nerf_example_data.zip
 	mv tiny_nerf_data ./data/
 	mv nerf_example_data.zip ./data/
 	unzip ./data/nerf_example_data.zip
+	unzip ./data/tiny_nerf_data.zip
 
 ## trainning demos, remind your gpu memory >= 8g
 train_demo:	train_lego train_fern
