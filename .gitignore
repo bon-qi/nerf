@@ -2,3 +2,4 @@
 *.tar
 *.__pyc
 data/*
+*.ply
