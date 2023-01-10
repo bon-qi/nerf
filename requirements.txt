@@ -3,4 +3,4 @@ numpy
 imageio 
 opencv_python 
 tqdm
-torch==1.12.0
+torch==1.12.1

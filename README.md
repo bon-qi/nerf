@@ -40,6 +40,9 @@ bash ./scripts/train_lego.sh
 This will make a `log` directory for check points, visualizations, etc.
 See [makefile](./makefile) for other commands, and see [arg_parser.py](./arg_parser.py) for more options on trainning.
 
+## Download pretrained
+You can download pretrained model from our [release](https://github.com/bon-qi/nerf/releases/tag/1.0) page, and place then in [./pretrained](./pretrained/) fold.
+
 ## Extra your mesh
 To extra a mesh yourself, you just need to type
 ```
