@@ -18,6 +18,7 @@ To train a lego for yourself after the environment had been set up, you just nee
 ```
 make train_lego
 ```
+This will make a `log` directory for check points, visualizations, etc.
 See `makefile` for other commands. 
 
 ## Extra your mesh
